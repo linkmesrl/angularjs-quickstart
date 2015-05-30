@@ -32,6 +32,6 @@ angular.module('groceryStore',[])
 
     // Define a function to remove element from cart
     $scope.removeFromCart = function(idx){
-        $scope.cart.splice(idx);
+        $scope.cart.splice(idx, 1);
     }
 });
