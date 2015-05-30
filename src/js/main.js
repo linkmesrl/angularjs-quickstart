@@ -36,6 +36,9 @@ angular.module('groceryStore',[])
         cartService.remove(idx);
     }
 })
+.controller('smallCartCtrl', function($scope, cartService){
+    $scope.items = cartService.cart;
+})
 .service('cartService', function(){
 
     // Define an empty cart
@@ -47,7 +50,7 @@ angular.module('groceryStore',[])
     };
 
     this.remove = function(idx){
-        this.cart.splice(idx);
+        this.cart.splice(idx, 1);
     };
 
     return this;

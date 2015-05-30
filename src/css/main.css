@@ -5,3 +5,8 @@ body{
 .label-top{
     margin-top: 23px;
 }
+
+.navbar .pull-right{
+    padding: 15px;
+    color: #fff;
+}
