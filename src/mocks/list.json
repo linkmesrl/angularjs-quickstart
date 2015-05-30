@@ -1,0 +1,37 @@
+[
+    {
+        "category" : "Fruits",
+        "name" : "Apple",
+        "quantity" : "12"
+    },
+    {
+        "category" : "Fruits",
+        "name" : "Banana",
+        "quantity" : "22"
+    },
+    {
+        "category" : "Fruits",
+        "name" : "Mango",
+        "quantity" : "6"
+    },
+    {
+        "category" : "Vegetables",
+        "name" : "Aubergine",
+        "quantity" : "20"
+    },
+    {
+        "category" : "Vegetables",
+        "name" : "Carrots",
+        "quantity" : "18"
+    },
+    {
+        "category" : "Vegetables",
+        "name" : "Salad",
+        "quantity" : "17"
+    },
+    {
+        "category" : "Vegetables",
+        "name" : "Tomato",
+        "quantity" : "9"
+    }
+]
