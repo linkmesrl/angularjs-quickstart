@@ -1,0 +1,18 @@
+{
+  "name": "angularjs-workshop-login",
+  "version": "1.0.0",
+  "description": "In this repository you will find all the code necessary to follow the AngularJs Quickstart Workshop @ Login",
+  "main": "src/index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:matteo_scandolo/angularjs-quickstart.git"
+  },
+  "author": "Matteo Scandolo",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^1.5.1",
+    "gulp": "^3.8.8",
+    "gulp-load-plugins": "^0.6.0",
+    "gulp-watch": "^1.0.7"
+  }
+}
