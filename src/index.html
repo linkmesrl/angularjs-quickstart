@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <form ng-submit="products.push({category: newProduct.category, name: newProduct.name, quantity: newProduct.quantity})" ng-init="products = []">
+                    <form ng-submit="addProduct()" ng-init="products = []">
                         <div class="col-sm-6 col-md-3">
                             <div class="form-group">
                                 <label>Category</label>
