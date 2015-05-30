@@ -108,9 +108,11 @@
                             <h3>Cart</h3>
                         </div>
                     </div>
-                    <div class="row" ng-repeat="item in cart">
+                    <div class="row" ng-repeat="item in cart track by $index">
                         <div class="col-xs-8">
                             {{item.name}}
+                        </div>
+                        <div class="col-xs-4 text-right">
                             <a href="" ng-click="removeFromCart($index)" class="btn btn-danger btn-small">
                                 x
                             </a>

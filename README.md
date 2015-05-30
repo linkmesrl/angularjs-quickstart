@@ -32,6 +32,7 @@ This less will show how to share data between two indepent controller
 - Integrate `cartService` in your controllers
 - Create a new controller `smallCartCtrl` and add it to the navbar
 - Show the amount of the cart added items
+- _Optional_ avoid duplicates in cart
 
 _Powered By_
 **LinkMe Srl**

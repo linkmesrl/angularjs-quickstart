@@ -1,35 +1,42 @@
 [
     {
+        "id" : "1",
         "category" : "Fruits",
         "name" : "Apple",
         "quantity" : "12"
     },
     {
+        "id" : "2",
         "category" : "Fruits",
         "name" : "Banana",
         "quantity" : "22"
     },
     {
+        "id" : "3",
         "category" : "Fruits",
         "name" : "Mango",
         "quantity" : "6"
     },
     {
+        "id" : "4",
         "category" : "Vegetables",
         "name" : "Aubergine",
         "quantity" : "20"
     },
     {
+        "id" : "5",
         "category" : "Vegetables",
         "name" : "Carrots",
         "quantity" : "18"
     },
     {
+        "id" : "6",
         "category" : "Vegetables",
         "name" : "Salad",
         "quantity" : "17"
     },
     {
+        "id" : "7",
         "category" : "Vegetables",
         "name" : "Tomato",
         "quantity" : "9"
