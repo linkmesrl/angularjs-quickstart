@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('groceryStore',[])
-.controller('listCtrl', function($scope, $http){
+.controller('listCtrl', function($scope, $http, cartService){
 
     // Define a list of categories
     $scope.categories = ['Fruits', 'Vegetables'];
@@ -24,14 +24,31 @@ angular.module('groceryStore',[])
     // Define a function to add a product to my cart
     $scope.cart = [];
     $scope.addToCart = function(product){
-        $scope.cart.push(product);
+        cartService.add(product);
     };
 
 })
-.controller('cartCtrl', function($scope){
+.controller('cartCtrl', function($scope, cartService){
 
+    $scope.cart = cartService.cart;
     // Define a function to remove element from cart
     $scope.removeFromCart = function(idx){
-        $scope.cart.splice(idx);
+        cartService.remove(idx);
     }
+})
+.service('cartService', function(){
+
+    // Define an empty cart
+    this.cart = [];
+
+    // Define a function to add a product to my cart
+    this.add = function(product){
+        this.cart.push(product);
+    };
+
+    this.remove = function(idx){
+        this.cart.splice(idx);
+    };
+
+    return this;
 });
