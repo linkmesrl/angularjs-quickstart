@@ -21,4 +21,13 @@ angular.module('groceryStore',[])
         $scope.newProduct = null;
     };
 
+    // Define a function to add a product to my cart
+    $scope.cart = [];
+    $scope.addToCart = function(product){
+        $scope.cart.push(product);
+    };
+
+})
+.controller('cartCtrl', function($scope){
+
 });

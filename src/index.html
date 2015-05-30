@@ -32,67 +32,83 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi asperiores magnam unde itaque distinctio nisi saepe, sed eum rem officiis, molestias deleniti iusto. Temporibus at perspiciatis quis blanditiis eos cupiditate.</p>
             <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
         </div>
-        <section ng-controller="listCtrl">
-
-            <div class="well">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h3>Insert a new product:</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <form ng-submit="addProduct()" ng-init="products = []">
-                        <div class="col-sm-6 col-md-3">
-                            <div class="form-group">
-                                <label>Category</label>
-                                <select ng-model="newProduct.category" ng-options="category for category in categories" class="form-control"></select>
-                            </div>
+        <section ng-controller="listCtrl" class="row">
+            <article class="col-sm-9">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Insert a new product:</h3>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input ng-model="newProduct.name" type="text" class="form-control">
+                    </div>
+                    <div class="row">
+                        <form ng-submit="addProduct()" ng-init="products = []">
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                    <label>Category</label>
+                                    <select ng-model="newProduct.category" ng-options="category for category in categories" class="form-control"></select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div class="form-group">
-                                <label>Quantity</label>
-                                <input ng-model="newProduct.quantity" type="number" class="form-control">
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input ng-model="newProduct.name" type="text" class="form-control">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3 text-right">
-                            <div class="form-group">
-                                <button class="btn btn-primary label-top">Save</button>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                    <label>Quantity</label>
+                                    <input ng-model="newProduct.quantity" type="number" class="form-control">
+                                </div>
                             </div>
+                            <div class="col-sm-6 col-md-3 text-right">
+                                <div class="form-group">
+                                    <button class="btn btn-primary label-top">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="well">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Product List</h3>
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="well">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h3>Product List</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input ng-model="query.category" class="form-control" type="text" placeholder="Filter by category"/>
+                        </div>
+                        <div class="col-sm-4">
+                            <input ng-model="query.name" class="form-control" type="text" placeholder="Filter by name"/>
+                        </div>
+                        <div class="col-sm-4">
+                            <input ng-model="query.quantity" class="form-control" type="text" placeholder="Filter by quantity"/>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <input ng-model="query.category" class="form-control" type="text" placeholder="Filter by category"/>
-                    </div>
-                    <div class="col-sm-4">
-                        <input ng-model="query.name" class="form-control" type="text" placeholder="Filter by name"/>
-                    </div>
-                    <div class="col-sm-4">
-                        <input ng-model="query.quantity" class="form-control" type="text" placeholder="Filter by quantity"/>
+                <div class="well" ng-repeat="product in products | filter:query">
+                    <div class="row">
+                        <div class="col-sm-3">{{product.category}}</div>
+                        <div class="col-sm-3">{{product.name}}</div>
+                        <div class="col-sm-3">{{product.quantity}}</div>
+                        <div class="col-sm-3">
+                            <a href="" ng-click="addToCart(product)" class="btn btn-primary">Buy</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="well" ng-repeat="product in products | filter:query">
-                <div class="row">
-                    <div class="col-sm-4">{{product.category}}</div>
-                    <div class="col-sm-4">{{product.name}}</div>
-                    <div class="col-sm-4">{{product.quantity}}</div>
+            </article>
+            <article ng-controller="cartCtrl" class="col-sm-3">
+                <div class="well">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Cart</h3>
+                        </div>
+                    </div>
+                    <div class="row" ng-repeat="item in cart">
+                        <div class="col-xs-12">{{item.name}}</div>
+                    </div>
                 </div>
-            </div>
+            </article>
         </section>
     </div>
 
