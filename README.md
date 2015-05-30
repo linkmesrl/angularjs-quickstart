@@ -34,6 +34,15 @@ This less will show how to share data between two indepent controller
 - Show the amount of the cart added items
 - _Optional_ avoid duplicates in cart
 
+## Lesson 04
+
+This will show up how to define routes within you application and how to structure a maintainable codebase
+
+- Add `ng-route` to you application
+- Define a base route `/` that match you `listCtrl`
+- Define an additional route `/about` that match a new `aboutCtrl`
+- Create the two views in the `view` folder
+
 _Powered By_
 **LinkMe Srl**
 
