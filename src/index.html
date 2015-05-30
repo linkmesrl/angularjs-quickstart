@@ -4,12 +4,66 @@
     <meta charset="UTF-8">
     <title>Grocery Store</title>
     <link rel="stylesheet" href="vendor/bootstrap-css-only/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Grocery Store</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 text-center">
-                <h1>Grocery Store</h1>
+        <div class="jumbotron">
+            <h1>The Grocery Store</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi asperiores magnam unde itaque distinctio nisi saepe, sed eum rem officiis, molestias deleniti iusto. Temporibus at perspiciatis quis blanditiis eos cupiditate.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Insert a new product:</h3>
+                </div>
+            </div>
+            <div class="row">
+                <form>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="form-group">
+                            <label>Category</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 text-right">
+                        <div class="form-group">
+                            <button class="btn btn-primary label-top">Save</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
