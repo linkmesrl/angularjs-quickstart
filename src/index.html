@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="UTF-8">
     <title>Grocery Store</title>
@@ -39,23 +39,23 @@
                 </div>
             </div>
             <div class="row">
-                <form>
+                <form ng-submit="products.push({category: newProduct.category, name: newProduct.name, quantity: newProduct.quantity})" ng-init="products = []">
                     <div class="col-sm-6 col-md-3">
                         <div class="form-group">
                             <label>Category</label>
-                            <input type="text" class="form-control">
+                            <select ng-model="newProduct.category" ng-options="category for category in ['Fruits', 'Vegetables']" class="form-control"></select>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control">
+                            <input ng-model="newProduct.name" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
                         <div class="form-group">
                             <label>Quantity</label>
-                            <input type="number" class="form-control">
+                            <input ng-model="newProduct.quantity" type="number" class="form-control">
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3 text-right">
@@ -74,23 +74,25 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <input class="form-control" type="text" placeholder="Filter by category"/>
+                    <input ng-model="query.category" class="form-control" type="text" placeholder="Filter by category"/>
                 </div>
                 <div class="col-sm-4">
-                    <input class="form-control" type="text" placeholder="Filter by name"/>
+                    <input ng-model="query.name" class="form-control" type="text" placeholder="Filter by name"/>
                 </div>
                 <div class="col-sm-4">
-                    <input class="form-control" type="text" placeholder="Filter by quantity"/>
+                    <input ng-model="query.quantity" class="form-control" type="text" placeholder="Filter by quantity"/>
                 </div>
             </div>
         </div>
-        <div class="well">
+        <div class="well" ng-repeat="product in products | filter:query">
             <div class="row">
-                <div class="col-sm-4">Category</div>
-                <div class="col-sm-4">Name</div>
-                <div class="col-sm-4">Quantity</div>
+                <div class="col-sm-4">{{product.category}}</div>
+                <div class="col-sm-4">{{product.name}}</div>
+                <div class="col-sm-4">{{product.quantity}}</div>
             </div>
         </div>
     </div>
+
+    <script src="vendor/angular/angular.min.js"></script>
 </body>
 </html>
