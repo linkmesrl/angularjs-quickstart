@@ -1,6 +1,21 @@
 'use strict';
 
-angular.module('groceryStore',[])
+angular.module('groceryStore',['ngRoute'])
+.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'views/list.html',
+        controller: 'listCtrl'
+      }).
+      when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'aboutCtrl'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }])
 .controller('listCtrl', function($scope, $http, cartService){
 
     // Define a list of categories
