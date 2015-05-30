@@ -10,3 +10,5 @@ body{
     padding: 15px;
     color: #fff;
 }
+
+.angular-google-map-container { height: 400px; }

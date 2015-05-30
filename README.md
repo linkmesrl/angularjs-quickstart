@@ -42,6 +42,8 @@ This will show up how to define routes within you application and how to structu
 - Define a base route `/` that match you `listCtrl`
 - Define an additional route `/about` that match a new `aboutCtrl`
 - Create the two views in the `view` folder
+- _Optional_ Separate your controller and services in different views
+- _Optional_ Integrate [Google Maps](http://angular-ui.github.io/angular-google-maps/#!/use) in you about page
 
 _Powered By_
 **LinkMe Srl**
