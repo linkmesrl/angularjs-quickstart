@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('groceryStore',[])
-.controller('listCtrl', function($scope, $http, cartService){
+.controller('listCtrl', function($scope, cartService, listService){
 
     // Define a list of categories
     $scope.categories = ['Fruits', 'Vegetables'];
 
     // Retrieve data form the backend
-    $http.get('../mocks/list.json')
+    listService.getList()
     .success(function(list){
         $scope.products = list;
     })
@@ -34,10 +34,15 @@ angular.module('groceryStore',[])
     // Define a function to remove element from cart
     $scope.removeFromCart = function(idx){
         cartService.remove(idx);
-    }
+    };
 })
 .controller('smallCartCtrl', function($scope, cartService){
     $scope.items = cartService.cart;
+})
+.service('listService', function($http){
+    this.getList = function(){
+        return $http.get('../mocks/list.json');
+    }
 })
 .service('cartService', function(){
 
