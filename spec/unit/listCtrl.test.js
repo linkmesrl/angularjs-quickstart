@@ -1,21 +1,27 @@
 describe('ListController', function() {
 
-  console.log('karma!');
-
   beforeEach(module('groceryStore'));
 
-  var $controller;
+  var $controller, mockService;
 
-  beforeEach(inject(function(_$controller_){
+  beforeEach(function(){
+    module(function($provide){
+      $provide.service('cartService',function(){
+        this.add = jasmine.createSpy('add');
+      });
+    });
+  })
+
+  beforeEach(inject(function(cartService, _$controller_){
     // The injector unwraps the underscores (_) from around the parameter names when matching
     $controller = _$controller_;
+    mockService = cartService;
   }));
 
-  describe('$scope.grade', function() {
+  describe('the addProduct function', function() {
 
-    console.log('test Started');
 
-    it('sets the strength to "strong" if the password length is >8 chars', function() {
+    it('should insert a produc in the list', function() {
       var $scope = {};
       var controller = $controller('listCtrl', { $scope: $scope });
       
@@ -26,6 +32,18 @@ describe('ListController', function() {
       $scope.addProduct();
 
       expect($scope.products.length).toEqual(1);
+    });
+
+    it('should call the service function', function() {
+      var $scope = {};
+      var controller = $controller('listCtrl', { $scope: $scope });
+
+      var product = {category: 'Fruits', name: 'Apple', quantity: 14};
+
+      $scope.addToCart(product);
+
+      expect(mockService.add).toHaveBeenCalled();
+      expect(mockService.add).toHaveBeenCalledWith(product);
     });
   });
 });
