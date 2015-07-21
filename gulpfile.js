@@ -21,3 +21,14 @@ gulp.task('serve', function() {
   gulp.start(['browserSync']);
   gulp.watch(options.src + '**/*', browserSync.reload);
 });
+
+var Karma = require('karma').Server;
+
+gulp.task('test', function (done) {
+  new Karma({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, function(){
+    done();
+  }).start();
+});
