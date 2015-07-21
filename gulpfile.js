@@ -32,3 +32,26 @@ gulp.task('test', function (done) {
     done();
   }).start();
 });
+
+gulp.task('webdriver-update', $.protractor.webdriver_update);
+
+function runProtractor (done) {
+
+    var confFile = 'protractor.conf.js';
+
+    gulp.src('spec/e2e/**/*.js')
+    .pipe($.protractor.protractor({
+        configFile: confFile
+    }))
+    .on('error', function (err) {
+        // Make sure failed tests cause gulp to exit non-zero
+        throw err;
+    })
+    .on('end', function () {
+        // Close browser sync server
+        browserSync.exit();
+        done();
+    });
+}
+
+gulp.task('e2e', ['serve', 'webdriver-update'], runProtractor);
