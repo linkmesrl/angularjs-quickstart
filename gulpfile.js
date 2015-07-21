@@ -24,7 +24,8 @@ gulp.task('serve', function() {
 
 var Karma = require('karma').Server;
 
-gulp.task('test', function (done) {
+gulp.task('unit', function (done) {
+
   new Karma({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
@@ -55,3 +56,5 @@ function runProtractor (done) {
 }
 
 gulp.task('e2e', ['serve', 'webdriver-update'], runProtractor);
+
+gulp.task('test', ['unit', 'e2e']);
