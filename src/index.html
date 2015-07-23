@@ -23,9 +23,8 @@
                     <li class="active"><a href="#/">Home</a></li>
                     <li><a href="#/about">About</a></li>
                 </ul>
-                <div class="pull-right" ng-controller="smallCartCtrl">
-                    <b>{{items.length}}</b>
-                    Items in cart
+                <div class="pull-right">
+                    <small-cart></small-cart>
                 </div>
             </div><!--/.nav-collapse -->
         </div>
@@ -67,7 +66,7 @@
     <script src="js/main.js"></script>
     <script src="js/list.controller.js"></script>
     <script src="js/cart.controller.js"></script>
-    <script src="js/smallcart.controller.js"></script>
+    <script src="js/smallcart.directive.js"></script>
     <script src="js/cart.service.js"></script>
     <script src="js/about.controller.js"></script>
 
